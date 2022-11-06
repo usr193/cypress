@@ -1,11 +1,16 @@
 /// <reference types="cypress" />
 
 const user = {
-  email: `${Date.now()}@example.com`,
+  // email: `${Date.now()}@example.com`,
+  email: `first@example.com`,
   password: 'password123',
 };
 
 describe('Sign Up', () => {
+  beforeEach(() => {
+    cy.task('reset');
+  });
+
   it('should successfully create a user when entering an email and a password', () => {
     // Sign Up
     cy.visit('/echo-chamber/sign-up');
